@@ -1,10 +1,13 @@
-curl =fsSL https://get.docker.com | sh
-mkdir OwnCloud && cd OwnCloud
-
 $myip=$"(hostname -I | awk '{print $1}')"
 echo -ne "\033[1;32mEnter port:\033[1;37m: "; read myport
 echo -ne "\033[1;32mEnter username:\033[1;37m: "; read myusername
 echo -ne "\033[1;32mEnter password:\033[1;37m: "; read mypassword
+
+
+
+curl =fsSL https://get.docker.com | sh
+mkdir OwnCloud && cd OwnCloud
+
 
 cat << EOF > .env
 OWNCLOUD_VERSION=latest
