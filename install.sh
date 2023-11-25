@@ -7,7 +7,8 @@ echo -ne "\033[1;32mEnter password:\033[1;37m: "; read mypassword
 
 
 curl =fsSL https://get.docker.com | sh
-mkdir -p OwnCloud && cd OwnCloud
+mkdir -p OwnCloud
+cd OwnCloud
 
 
 cat << EOF > .env
@@ -19,6 +20,6 @@ ADMIN_PASSWORD=$mypassword
 HTTP_PORT=$myport
 EOF
 
-wget 
+curl https://raw.githubusercontent.com/sons-of-liberty/OwnCloud/main/docker-compose.yml > docker-compose.yml
 
 docker compose up -d
